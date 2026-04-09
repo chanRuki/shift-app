@@ -1,0 +1,139 @@
+.table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: max-content;
+}
+
+.table th,
+.table td {
+  border: 1px solid #c8d0dc;
+  text-align: center;
+  vertical-align: middle;
+  height: 24px;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+/* ── Sticky ヘッダー ── */
+thead tr:nth-child(1) th { position: sticky; top: 0;    z-index: 3; }
+thead tr:nth-child(2) th { position: sticky; top: 25px; z-index: 3; }
+thead tr:nth-child(3) th { position: sticky; top: 50px; z-index: 3; }
+
+/* ── Sticky 名前列 ── */
+.table td:first-child,
+.table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+thead th:first-child { z-index: 5; }
+
+/* ── Column widths ── */
+.colName { width: 84px; }
+.colDay  { width: 28px; }
+.colSum  { width: 34px; }
+
+/* ── Header styles ── */
+.thMonth {
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 3px;
+}
+
+.thDow {
+  background: #e8eef5;
+  font-weight: 700;
+  font-size: 10px;
+  padding: 2px 3px;
+}
+
+.thEvent {
+  background: #f5f7fa;
+  font-size: 9px;
+  padding: 1px 2px;
+  height: 20px;
+}
+
+/* ── 土日色（ヘッダー限定） ── */
+thead .sat { color: #1565c0; background: #dbeafe !important; }
+thead .sun { color: #b91c1c; background: #fee2e2 !important; }
+
+/* ── 名前セル ── */
+.nameCell {
+  min-width: 84px;
+  text-align: left !important;
+  padding: 0 8px !important;
+}
+
+.staffName {
+  background: #f5f7fa;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+/* ── シフトセル ── */
+.shiftCell {
+  width: 28px;
+  padding: 0 !important;
+  cursor: pointer;
+  transition: filter 0.1s;
+  position: relative;
+}
+.shiftCell:hover { filter: brightness(0.88); }
+
+/* エラー：赤枠（2px・inset で隣セルに影響しない） */
+.cellError {
+  box-shadow: inset 0 0 0 2px #ef4444;
+  z-index: 1;
+}
+
+/* 警告：黄枠 */
+.cellWarning {
+  box-shadow: inset 0 0 0 2px #f59e0b;
+  z-index: 1;
+}
+
+.shiftSelect {
+  width: 28px;
+  height: 22px;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+/* ── 集計セル ── */
+.sumCell {
+  background: #e8eef5;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* ── 集計行 ── */
+.totalLabel {
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 10px;
+  text-align: left !important;
+  padding: 0 8px !important;
+}
+
+.totalCell {
+  font-size: 10px;
+  font-weight: 700;
+  color: #1e2a3a;
+}
+
+/* ── 土日（tbody用） ── */
+.sat { color: #1565c0; }
+.sun { color: #b91c1c; }

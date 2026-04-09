@@ -1,0 +1,85 @@
+/* ── Google Fonts は index.html で読み込み済み ── */
+
+:root {
+  --navy:      #1a3a5c;
+  --navy-dk:   #112540;
+  --navy-lt:   #2a5080;
+  --accent:    #3b82f6;
+  --bg:        #f0f2f5;
+  --white:     #ffffff;
+  --border:    #d0d7e2;
+  --text:      #1e2a3a;
+  --muted:     #64748b;
+
+  /* レイアウト寸法 */
+  --header-h:  52px;
+  --tabbar-h:  40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Noto Sans JP', 'Meiryo', 'MS Gothic', sans-serif;
+  font-size: 12px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ── 共通ボタン ── */
+.btn {
+  font-size: 11px;
+  padding: 4px 12px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn:hover { opacity: 0.85; }
+
+.btn-primary { background: var(--accent);  color: #fff; }
+.btn-success { background: #217346;        color: #fff; }
+.btn-danger  { background: #dc2626;        color: #fff; }
+.btn-outline {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ── プレースホルダーページ共通 ── */
+.placeholder-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--muted);
+}
+.placeholder-page .ph-icon  { font-size: 48px; opacity: 0.3; }
+.placeholder-page .ph-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+.placeholder-page .ph-desc  { font-size: 11px; }
